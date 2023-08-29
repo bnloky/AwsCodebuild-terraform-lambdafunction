@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+ secrets-manager:
+  MY_SECRET: "AWS_ACCESS_KEY"
+  MY_SECRET: "AWS_SECRET_ACCESS_KEY"
+
 phases:
   install:
     runtime-versions:
