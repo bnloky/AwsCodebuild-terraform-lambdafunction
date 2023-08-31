@@ -10,6 +10,8 @@ phases:
       - chmod +x terraform
   build:
     commands:
+      - ls -ltra
+      - pwd
       - ./terraform init
       - ./terraform plan 
   post_build:
