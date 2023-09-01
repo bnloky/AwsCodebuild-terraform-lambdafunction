@@ -3,8 +3,7 @@ provider "aws" {
   secret_key = var.aws_secret_key
   region     = var.aws_region
   assume_role {
-    role_arn     = "arn:aws:iam::681217613251:role/service-role/codebuild-mylambdafunctionThi-service-role"
-    
+    role_arn = "arn:aws:iam::681217613251:role/service-role/codebuild-mylambdafunctionThi-service-role"   
   }
 }
 
