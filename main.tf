@@ -12,6 +12,7 @@ terraform {
     region = "ap-south-1"
   }
 }
+
 resource "aws_lambda_function" "my_function" {
     role = "arn:aws:iam::681217613251:role/service-role/codebuild-mylambdafunctionThi-service-role"
     function_name = "my_lambda_function"
