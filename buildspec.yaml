@@ -10,9 +10,8 @@ phases:
       - unzip terraform_0.10.4_linux_amd64.zip
       - mv terraform /bin
       - rm terraform_0.10.4_linux_amd64.zip
-      - apt-get update
-      - apt-cache search source
-      - apt-get install -y curl jq
+      - yum update -y
+      - yum install -y curl jq
   build:
     commands:
       - ls -ltra
