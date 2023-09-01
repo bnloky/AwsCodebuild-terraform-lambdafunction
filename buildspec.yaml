@@ -14,8 +14,8 @@ phases:
       - ls -ltra
       - pwd
       - terraform --version
-      - ./terraform init
-      - ./terraform plan 
-  post_build:
-    commands:
-      - ./terraform apply -auto-approve
+      - terraform init
+      - terraform plan 
+  # post_build:
+  #   commands:
+  #     - ./terraform apply -auto-approve
