@@ -1,11 +1,12 @@
 version: 0.2
 
-env:
-  exported-variables:
-    - AWS_ACCESS_KEY
-    - AWS_SECRET_ACCESS_KEY
-    - AWS_REGION
-    
+eenv:
+  secrets-manager:
+    MY_ACCESS_KEY: myprogramatic-acccess:AWS_ACCESS_KEY
+    MY_SECRET_ACCESS_KEY: myprogramatic-acccess:AWS_SECRET_ACCESS_KEY
+    MY_REGION: myprogramatic-acccess:AWS_REGION
+
+
 phases:
   install:
     runtime-versions:
@@ -21,10 +22,10 @@ phases:
       - pwd
       - terraform --version
       - terraform init 
-      - echo $AWS_REGION
+      - echo $MY_REGION
       
-      - terraform plan -var "aws_access_key=$AWS_ACCESS_KEY" -var "aws_secret_key=$AWS_SECRET_ACCESS_KEY" -var "aws_region=$AWS_REGION"
+      - terraform plan -var "aws_access_key=$MY_ACCESS_KEY" -var "aws_secret_key=$MY_SECRET_ACCESS_KEY" -var "aws_region=$MY_REGION"
 
   post_build:
     commands:
-      - terraform apply -var "aws_access_key=$AWS_ACCESS_KEY" -var "aws_secret_key=$AWS_SECRET_ACCESS_KEY" -var "aws_region=$AWS_REGION" -auto-approve 
+      - terraform apply -var "aws_access_key=$MY_ACCESS_KEY" -var "aws_secret_key=$MY_SECRET_ACCESS_KEY" -var "aws_region=$MY_REGION" -auto-approve 
