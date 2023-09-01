@@ -15,7 +15,7 @@ terraform {
 
 resource "aws_lambda_function" "my_function" {
     role = "arn:aws:iam::681217613251:role/service-role/codebuild-mylambdafunctionThi-service-role"
-    function_name = "my_lambda_function"
+    function_name = "my_lambda_function1"
     runtime = "python3.8"
     handler = "index.handler"
     timeout = 300
@@ -25,7 +25,7 @@ resource "aws_lambda_function" "my_function" {
 
 data "archive_file" "lambda_function_archive" {
   type        = "zip"
-  source_dir  =  "./lambdafunction"  # Path to the directory containing your Lambda function code
-  output_path = "./lambdafunction.zip"   # Path where you want to save the generated zip archive
+  source_dir  =  "/lambdafunction"      # Path to the directory containing your Lambda function code
+  output_path = "/lambdafunction.zip"   # Path where you want to save the generated zip archive
 }
 
