@@ -25,6 +25,6 @@ resource "aws_lambda_function" "my_function" {
 
 data "archive_file" "lambda_function_archive" {
   type        = "zip"
-  source_dir  =  "./lambdafunction"  # Path to the directory containing your Lambda function code
-  output_path = "./lambdafunction.zip"   # Path where you want to save the generated zip archive
+  source_dir  =  "./lambda-function"  # Path to the directory containing your Lambda function code
+  output_path = "./lambda-function.zip"   # Path where you want to save the generated zip archive
 }
