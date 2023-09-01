@@ -5,13 +5,10 @@ provider "aws" {
 }
 
 terraform {
+  required_version = ">= 1.5.6"
   backend "s3" {
     bucket = "codebuild-aws-lambdafunction"  
     key    = "tffiles.tfstate"                  
     region = "ap-south-1"
   }
 }
-
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
-variable "aws_region" {}
